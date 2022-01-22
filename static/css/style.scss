@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  background-color: #29539b;
+  background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+}
+
 .inactive {
   display: none;
 }
@@ -17,38 +23,52 @@
   height: 50px;
   form {
     margin: auto;
-    width: 50%;
+    width: 75%;
     display: flex;
     justify-content: center;
     input[type=text] {
+      width: 100%;
       padding: 6px;
       margin-top: 8px;
       font-size: 17px;
       outline: none;
+      border: 0.1em solid #FFFFFF;
+      border-bottom-left-radius: 2px;
+      border-top-left-radius: 2px;
+      color: #0a1c3f;
     }
     input[type=submit] {
       float: right;
       padding: 6px;
       margin-top: 8px;
       margin-right: 16px;
-      background: #ddd;
+      background: transparent;
+      border: 0.1em solid #FFFFFF;
       font-size: 17px;
-      border: none;
       cursor: pointer;
+      color:#FFFFFF;
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+    input[type=submit]:hover {
+      background-color: #4367aa;
     }
   }
 }
 .errorDisplay {
   height: 50px;
   text-align: center;
+  color: whitesmoke;
 }
 .weatherMapDisplay {
+  display: flex;
+  flex-direction: row;
   .weatherDisplay {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%); 
+    background-color: #637081;
+    background-image: linear-gradient(315deg, #637081 0%, #7c98b3 74%);
     height: 175px;
     width: 300px;
-    margin: auto;
+    margin: auto 10px auto auto;
     border-radius: 5px;
     .weatherBrief {
       color: whitesmoke;
@@ -70,6 +90,15 @@
         .weatherDescription {
           width: 50%;
           padding: 30px 10px 5px 20px;
+          p{
+            margin: 0;
+          }
+          .temp {
+            font-size: 25px;
+          }
+          .description {
+            font-size: 14px;
+          }
         }
         .weatherImage {
           width: 50%;
@@ -84,11 +113,26 @@
 
   .mapDisplay {
     width: 300px;
-    margin: auto;
-    padding: 20px;
+    margin: auto auto auto 10px;
     .displayMap {
-      height: 260px;
+      height: 175px;
       width: 100%;
+      .leaflet-container {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .weatherMapDisplay {
+    display: flex;
+    flex-direction: column;
+    .weatherDisplay {
+      margin: 10px auto;
+    }
+    .mapDisplay {
+      margin: 10px auto;
     }
   }
 }
