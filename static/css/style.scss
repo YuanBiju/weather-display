@@ -7,16 +7,24 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
 body {
-  height: 100%;
+  min-height: 100%;
+  margin-bottom: 0;
   background-image: linear-gradient(to bottom, #141e30, #243b55);
 }
 
-.inactive {
-  display: none;
+.main {
+  height: 100%;
 }
+
 .active {
   display: block;
+}
+.inactive {
+  display: none;
 }
 
 .cityInputForm {
@@ -65,6 +73,7 @@ body {
 .weatherMapDisplay {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   .weatherDisplay {
     background-color: #29539b;
     background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
@@ -72,7 +81,7 @@ body {
     width: wrap;
     max-width: 350px;
     min-height: 200px;
-    margin: auto 10px auto auto;
+    margin: auto 10px 10px auto;
     border-radius: 5px;
     .weatherBrief {
       color: whitesmoke;
@@ -120,7 +129,7 @@ body {
 
   .mapDisplay {
     width: 350px;
-    margin: auto auto auto 10px;
+    margin: auto auto 10px 10px;
     .displayMap {
       height: 200px;
       width: 100%;
