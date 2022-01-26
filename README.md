@@ -1,3 +1,3 @@
 # Weather Display
 
-Link: https://baitmaker.github.io/weatherDisplay/
+Link: https://baitmaker.github.io/weather-display/
